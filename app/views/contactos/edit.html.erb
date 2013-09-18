@@ -1,5 +1,7 @@
 <fieldset class="box tabular">
-  <legend>Editar contacto</legend>
+  <legend>
+    <%= if @accion == 'update' then 'Editar' else 'Nuevo' end %> contacto
+  </legend>
   <%= form_tag(:action => @accion, :method => 'post') do %>
     <p>
       <%= label_tag(:nombre, 'Nombre') %>
@@ -8,6 +10,14 @@
     <p>
       <%= label_tag(:apellido, 'Apellido') %>
       <%= text_field "contacto", "apellido" %>
+    </p>
+    <p>
+      <%= label_tag(:empresa, 'Empresa') %>
+      <%= text_field "contacto", "empresa" %>
+    </p>
+    <p>
+      <%= label_tag(:direccion, 'Direccion') %>
+      <%= text_field "contacto", "direccion" %>
     </p>
     <p>
       <%= label_tag(:telefono, 'Telefono') %>

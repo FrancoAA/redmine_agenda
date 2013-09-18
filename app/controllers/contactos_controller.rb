@@ -28,6 +28,8 @@ class ContactosController < ApplicationController
       @contacto.apellido = params[:contacto][:apellido]
       @contacto.telefono = params[:contacto][:telefono]
       @contacto.email = params[:contacto][:email]
+      @contacto.empresa = params[:contacto][:empresa]
+      @contacto.direccion = params[:contacto][:direccion]
       unless @contacto.save then
         flash[:error] = 'Los datos ingresados son invalidos'
         redirect_to :action => 'edit'

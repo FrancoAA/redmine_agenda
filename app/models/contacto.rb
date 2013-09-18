@@ -5,4 +5,5 @@ class Contacto < ActiveRecord::Base
   validates :apellido, presence: true
   validates :telefono, presence: true
   validates :email, presence: true
+  validates :empresa, presence: true
 end
