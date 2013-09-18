@@ -25,11 +25,14 @@
         <%= link_to 'Editar', 
         controller: 'contactos', 
         action: 'edit', 
-        id: contacto.id %> |
+        id: contacto.id 
+        class: 'icon icon-edit' %> |
         <%= link_to 'Eliminar', 
         controller: 'contactos', 
         action: 'delete', 
-        id: contacto.id %>
+        id: contacto.id 
+        class: 'icon icon-del'
+        %>
       </td>
     </tr>
     <% end %>
