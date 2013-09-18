@@ -1,0 +1,3 @@
+= eqplugin
+
+Description goes here

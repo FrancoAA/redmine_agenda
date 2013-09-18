@@ -1,0 +1,34 @@
+<h2>Agenda de contactos</h2>
+
+<table class="list">
+  <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Telefono</th>
+    <th>Correo</th>
+    <th>&nbsp;</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @contactos.each do |contacto| %>
+    <tr>
+      <td><%= contacto.nombre %></td>
+      <td><%= contacto.apellido %></td>
+      <td><%= contacto.telefono %></td>
+      <td><%= contacto.email %></td>
+      <td>
+        <%= link_to 'Editar', 
+        controller: 'contactos', 
+        action: 'edit', 
+        id: contacto.id %> |
+        <%= link_to 'Eliminar', 
+        controller: 'contactos', 
+        action: 'delete', 
+        id: contacto.id %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Nuevo', controller: 'contactos', action: 'new' %>
