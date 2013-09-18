@@ -1,45 +1,49 @@
-<h2>Agenda de contactos</h2>
+ 
+  <div class="contextual">
+    <%= link_to 'Nuevo', { controller: 'contactos', action: 'new' }, class: 'icon icon-add' %>
+  </div>
 
-<table class="list">
-  <thead>
-  <tr>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Empresa</th>
-    <th>Direccion</th>
-    <th>Telefono</th>
-    <th>Correo</th>
-    <th>&nbsp;</th>
-  </tr>
-  </thead>
-  <tbody>
-    <% @contactos.each do |contacto| %>
+  <h2>Agenda de contactos</h2>
+
+  <table class="list">
+    <thead>
     <tr>
-      <td><%= contacto.nombre %></td>
-      <td><%= contacto.apellido %></td>
-      <td><%= contacto.empresa %></td>
-      <td><%= contacto.direccion %></td>
-      <td><%= contacto.telefono %></td>
-      <td><%= mail_to contacto.email %></td>
-      <td>
-        <%= link_to 'Editar', 
-        {
-          controller: 'contactos', 
-          action: 'edit', 
-          id: contacto.id
-        },
-        class: 'icon icon-edit' %> |
-        <%= link_to 'Eliminar', 
-        {
-          controller: 'contactos', 
-          action: 'delete', 
-          id: contacto.id
-        },
-        class: 'icon icon-del'
-        %>
-      </td>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Empresa</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Correo</th>
+      <th>&nbsp;</th>
     </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'Nuevo', controller: 'contactos', action: 'new' %>
+    </thead>
+    <tbody>
+      <% @contactos.each do |contacto| %>
+      <tr>
+        <td><%= contacto.nombre %></td>
+        <td><%= contacto.apellido %></td>
+        <td><%= contacto.empresa %></td>
+        <td><%= contacto.direccion %></td>
+        <td><%= contacto.telefono %></td>
+        <td><%= mail_to contacto.email %></td>
+        <td>
+          <%= link_to 'Editar', 
+          {
+            controller: 'contactos', 
+            action: 'edit', 
+            id: contacto.id
+          },
+          class: 'icon icon-edit' %> |
+          <%= link_to 'Eliminar', 
+          {
+            controller: 'contactos', 
+            action: 'delete', 
+            id: contacto.id
+          },
+          class: 'icon icon-del'
+          %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
