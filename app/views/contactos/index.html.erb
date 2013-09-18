@@ -20,17 +20,21 @@
       <td><%= contacto.empresa %></td>
       <td><%= contacto.direccion %></td>
       <td><%= contacto.telefono %></td>
-      <td><%= contacto.email %></td>
+      <td><%= mail_to contacto.email %></td>
       <td>
         <%= link_to 'Editar', 
-        controller: 'contactos', 
-        action: 'edit', 
-        id: contacto.id 
+        {
+          controller: 'contactos', 
+          action: 'edit', 
+          id: contacto.id
+        },
         class: 'icon icon-edit' %> |
         <%= link_to 'Eliminar', 
-        controller: 'contactos', 
-        action: 'delete', 
-        id: contacto.id 
+        {
+          controller: 'contactos', 
+          action: 'delete', 
+          id: contacto.id
+        },
         class: 'icon icon-del'
         %>
       </td>
