@@ -5,7 +5,7 @@
 
   <h2>Agenda de contactos</h2>
 
-  <table class="list">
+  <table id="eqamigos" class="list tablesorter">
     <thead>
     <tr>
       <th>Nombre</th>
@@ -47,3 +47,13 @@
       <% end %>
     </tbody>
   </table>
+  
+  <script type="text/javascript">
+    (function() {
+      $('#eqamigos').tablesorter();
+    })();
+  </script>
+  
+  <% content_for :header_tags do %>
+      <%= javascript_include_tag '/plugin_assets/eqplugin/javascripts/jquery.tablesorter.min.js' %>
+  <% end %>
