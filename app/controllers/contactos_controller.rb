@@ -56,4 +56,9 @@ class ContactosController < ApplicationController
     @contacto = Contacto.find(params[:id])
     render :template => "contactos/edit", :formats => [:html]
   end
+  
+  def show
+    @contacto = Contacto.find(params[:id])
+    render :template => "contactos/show", :formats => [:html]
+  end
 end
