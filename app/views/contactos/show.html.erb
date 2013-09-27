@@ -1,0 +1,36 @@
+<fieldset class="box tabular">
+  <legend>
+    Informacion de contacto
+  </legend>
+    <p>
+      <%= label_tag(:nombre, 'Nombre : ') %>
+      <%= @contacto.nombre %>
+    </p>
+    <p>
+      <%= label_tag(:apellido, 'Apellido : ') %>
+      <%= @contacto.apellido %>
+    </p>
+    <p>
+      <%= label_tag(:empresa, 'Empresa : ') %>
+      <%= @contacto.empresa %>
+    </p>
+    <p>
+      <%= label_tag(:direccion, 'Direccion : ') %>
+      <%= @contacto.direccion %>
+    </p>
+    <p>
+      <%= label_tag(:telefono, 'Telefono : ') %>
+      <%= @contacto.telefono %>
+    </p>
+    <p>
+      <%= label_tag(:email, 'Correo : ') %>
+      <%= @contacto.email %>
+    </p>
+    
+    
+    <img src="//maps.googleapis.com/maps/api/staticmap?center=<%= @contacto.direccion %>&amp;zoom=13&amp;size=550x200&amp;maptype=roadmap&amp;markers=color:blue%7Clabel:S%7C40.702147,-74.015794&amp;markers=color:green%7Clabel:G%7C40.711614,-74.012318&amp;markers=color:red%7Clabel:C%7C40.718217,-73.998284&amp;sensor=true" alt="Puntos de interés en Lower Manhattan" border="0">
+ 
+    
+    <%= link_to 'Volver', action: 'index' %>
+    
+</fieldset>
